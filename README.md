@@ -1,6 +1,6 @@
 # Renan dos Santos
 
-Desenvolvimento web com **HTML, CSS e JavaScript**. Este perfil reúne projetos práticos, interfaces responsivas e protótipos interativos.
+Desenvolvimento web com **HTML, CSS e JavaScript**. Aqui reúno páginas, ferramentas interativas e protótipos responsivos.
 
 ## Projetos
 
@@ -10,13 +10,13 @@ Página de apresentação de serviços técnicos, com chamada para contato comer
 
 **Tecnologias:** HTML · CSS
 
-### [Organizador de tarefas](https://github.com/dossantosrenan/dossantosrenan/blob/main/projetos/organizador-de-tarefas/index.html)
+### [Organizador de tarefas](https://github.com/dossantosrenan/dossantosrenan/tree/main/projetos/organizador-de-tarefas)
 
 Aplicação de lista de tarefas com filtros, conclusão e salvamento local no navegador.
 
 **Tecnologias:** HTML · CSS · JavaScript
 
-### [Painel de vendas](https://github.com/dossantosrenan/dossantosrenan/blob/main/projetos/painel-de-vendas/index.html)
+### [Painel de vendas](https://github.com/dossantosrenan/dossantosrenan/tree/main/projetos/painel-de-vendas)
 
 Painel responsivo com indicadores, filtro de período e gráfico mensal. Os números são fictícios e servem apenas para demonstrar a interface.
 
@@ -26,5 +26,4 @@ Painel responsivo com indicadores, filtro de período e gráfico mensal. Os núm
 
 ## Contato
 
-- [GitHub](https://github.com/dossantosrenan)
-
+[GitHub](https://github.com/dossantosrenan)
