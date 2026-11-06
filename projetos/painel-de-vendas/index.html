@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Painel de indicadores com dados fictícios para demonstração de interface.">
+<title>Painel de vendas — Projeto demonstrativo</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#182234;background:#f4f6fa;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}.shell{max-width:1100px;margin:auto;padding:42px 22px}
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px}.tag{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:750;color:#6371c8}
+h1{font-size:clamp(2rem,5vw,2.8rem);letter-spacing:-.045em;margin:6px 0}.note{color:#6b7689;margin:0;line-height:1.5}
+select{font:inherit;padding:10px 12px;border:1px solid #dce1eb;background:#fff;border-radius:10px;color:#334}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:#fff;border:1px solid #e5e9f0;border-radius:15px;padding:19px;box-shadow:0 8px 26px #1e2a4208}.label{color:#758096;font-size:.88rem}.value{font-size:1.8rem;letter-spacing:-.04em;font-weight:750;margin:9px 0 5px}.delta{font-size:.83rem;color:#328266}.delta.neutral{color:#788397}
+.chart-card{margin-top:16px;padding:23px}.chart-head{display:flex;justify-content:space-between;align-items:start;gap:14px}.chart-head h2{font-size:1.1rem;margin:0 0 5px}.chart-head p{margin:0;color:#778196;font-size:.9rem}
+.chart{height:245px;margin-top:25px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:end;border-bottom:1px solid #e6eaf1;padding:0 8px}
+.column{height:100%;display:flex;align-items:center;justify-content:end;flex-direction:column;gap:9px}.bar{width:min(58px,70%);height:var(--h);min-height:8px;background:linear-gradient(180deg,#7888e0,#5165c4);border-radius:8px 8px 2px 2px;transition:height .35s ease}.month{font-size:.8rem;color:#737e92;padding-bottom:9px}
+.legend{display:flex;align-items:center;gap:8px;color:#727d90;font-size:.85rem;margin-top:14px}.dot{width:9px;height:9px;background:#6174d0;border-radius:50%}
+.disclaimer{border-left:3px solid #d3a64e;background:#fff9e9;color:#675629;border-radius:5px;padding:12px 14px;margin-top:16px;font-size:.87rem;line-height:1.5}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.top{align-items:start;flex-direction:column}.chart{gap:5px;padding:0}.month{font-size:.72rem}}
+@media(max-width:420px){.shell{padding:28px 14px}.grid{gap:9px}.card{padding:14px}.value{font-size:1.45rem}.chart-card{padding:16px}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header class="top"><div><div class="tag">Projeto demonstrativo · HTML, CSS e JavaScript</div><h1>Painel de vendas</h1><p class="note">Indicadores mensais em uma interface leve e responsiva.</p></div><label class="note" for="period">Período&nbsp; <select id="period"><option value="6">Últimos 6 meses</option><option value="3">Últimos 3 meses</option></select></label></header>
+<section class="grid" aria-label="Indicadores">
+<article class="card"><div class="label">Vendas no período</div><div class="value" id="sales">R$ 0</div><div class="delta" id="salesDelta">—</div></article>
+<article class="card"><div class="label">Pedidos</div><div class="value" id="orders">0</div><div class="delta neutral">Quantidade de pedidos</div></article>
+<article class="card"><div class="label">Ticket médio</div><div class="value" id="average">R$ 0</div><div class="delta neutral">Vendas ÷ pedidos</div></article>
+<article class="card"><div class="label">Mês de maior venda</div><div class="value" id="best" style="font-size:1.35rem">—</div><div class="delta neutral">No intervalo selecionado</div></article>
+</section>
+<section class="card chart-card"><div class="chart-head"><div><h2>Vendas por mês</h2><p>Valores ilustrativos em reais</p></div></div><div class="chart" id="chart" role="img" aria-label="Gráfico de vendas mensais"></div><div class="legend"><span class="dot"></span>Vendas demonstrativas</div></section>
+<aside class="disclaimer"><strong>Dados fictícios:</strong> este painel é um protótipo de portfólio. Os números foram criados somente para demonstrar a interface e não representam uma empresa ou resultado real.</aside>
+</main>
+<script>
+const data=[{m:"Mai",v:8200,o:41},{m:"Jun",v:10400,o:48},{m:"Jul",v:9600,o:45},{m:"Ago",v:13700,o:59},{m:"Set",v:12100,o:54},{m:"Out",v:15800,o:68}];
+const money=n=>new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0}).format(n);
+function update(){const size=Number(document.querySelector("#period").value),rows=data.slice(-size),total=rows.reduce((s,x)=>s+x.v,0),orders=rows.reduce((s,x)=>s+x.o,0),max=Math.max(...rows.map(x=>x.v));document.querySelector("#sales").textContent=money(total);document.querySelector("#orders").textContent=new Intl.NumberFormat("pt-BR").format(orders);document.querySelector("#average").textContent=money(total/orders);document.querySelector("#best").textContent=rows.find(x=>x.v===max).m;document.querySelector("#salesDelta").textContent="Dados de exemplo";
+const chart=document.querySelector("#chart");chart.replaceChildren();rows.forEach(x=>{const col=document.createElement("div");col.className="column";col.setAttribute("aria-label",x.m+": "+money(x.v));const bar=document.createElement("div");bar.className="bar";bar.style.setProperty("--h",(x.v/max*82)+"%");bar.title=x.m+" — "+money(x.v);const label=document.createElement("span");label.className="month";label.textContent=x.m;col.append(bar,label);chart.append(col)})}
+document.querySelector("#period").addEventListener("change",update);update();
+</script>
+</body>
+</html>
