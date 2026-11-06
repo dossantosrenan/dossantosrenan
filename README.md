@@ -1,19 +1,30 @@
 # Renan dos Santos
 
-Desenvolvimento web com foco em páginas claras, funcionais e fáceis de usar. Neste perfil reúno projetos práticos e soluções digitais.
+Desenvolvimento web com **HTML, CSS e JavaScript**. Este perfil reúne projetos práticos, interfaces responsivas e protótipos interativos.
 
-## Projeto em destaque
+## Projetos
 
-### [D’Brother’s Soluções Técnicas](https://github.com/dossantosrenan/machadossantosgithub.io)
+### [Site da D’Brother’s Soluções Técnicas](https://github.com/dossantosrenan/machadossantosgithub.io)
 
-Página de apresentação para uma empresa de serviços técnicos, criada com **HTML** e **CSS**. O projeto organiza a apresentação do serviço e inclui acesso direto ao contato comercial.
+Página de apresentação de serviços técnicos, com chamada para contato comercial.
 
 **Tecnologias:** HTML · CSS
 
-## Sobre este perfil
+### [Organizador de tarefas](https://github.com/dossantosrenan/dossantosrenan/blob/main/projetos/organizador-de-tarefas/index.html)
 
-Estou organizando os projetos com foco em clareza: contexto, tecnologias utilizadas e instruções para execução. Novos trabalhos serão adicionados conforme estiverem prontos.
+Aplicação de lista de tarefas com filtros, conclusão e salvamento local no navegador.
 
----
+**Tecnologias:** HTML · CSS · JavaScript
 
-*Perfil em português · São bem-vindas conversas sobre projetos e colaboração.*
+### [Painel de vendas](https://github.com/dossantosrenan/dossantosrenan/blob/main/projetos/painel-de-vendas/index.html)
+
+Painel responsivo com indicadores, filtro de período e gráfico mensal. Os números são fictícios e servem apenas para demonstrar a interface.
+
+**Tecnologias:** HTML · CSS · JavaScript
+
+> Os dois últimos itens são projetos demonstrativos de portfólio. O painel usa dados ilustrativos; nenhum resultado comercial é apresentado como real.
+
+## Contato
+
+- [GitHub](https://github.com/dossantosrenan)
+
