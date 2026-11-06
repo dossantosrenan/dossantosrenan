@@ -1,16 +1,19 @@
-## Hi there 👋
+# Renan dos Santos
 
-<!--
-**dossantosrenan/dossantosrenan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Desenvolvimento web com foco em páginas claras, funcionais e fáceis de usar. Neste perfil reúno projetos práticos e soluções digitais.
 
-Here are some ideas to get you started:
+## Projeto em destaque
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### [D’Brother’s Soluções Técnicas](https://github.com/dossantosrenan/machadossantosgithub.io)
+
+Página de apresentação para uma empresa de serviços técnicos, criada com **HTML** e **CSS**. O projeto organiza a apresentação do serviço e inclui acesso direto ao contato comercial.
+
+**Tecnologias:** HTML · CSS
+
+## Sobre este perfil
+
+Estou organizando os projetos com foco em clareza: contexto, tecnologias utilizadas e instruções para execução. Novos trabalhos serão adicionados conforme estiverem prontos.
+
+---
+
+*Perfil em português · São bem-vindas conversas sobre projetos e colaboração.*
